@@ -49,5 +49,13 @@ describe("stack", function() {
     });
   });
 
+  describe('#remove()', function() {
+    it('should be able to remove the last argument passed in', function() {
+      stack.add('a');
+      stack.add('b');
+      stack.add('c');
+      expect(stack.remove()).to.equal('c');
+    });
+  });
   // Hey! Add more tests here to test the functionality of stack
 });

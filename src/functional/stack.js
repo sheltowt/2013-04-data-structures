@@ -14,6 +14,8 @@ var makeStack = function(){
   };
 
   stack.remove = function(){
+    var length = stack.size();
+    return stack[length-1];
   };
 
   stack.size = function(obj){
