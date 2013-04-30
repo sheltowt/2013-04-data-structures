@@ -28,5 +28,42 @@ describe("queue", function() {
     });
   });
 
+  it('should be able to add multiple things', function() {
+      // Make sure add() takes a single argument using (see http://mdn.io/Function.length)
+      queue.add('a');
+      queue.add('b');
+      queue.add('c');
+      expect(queue.size()).to.equal(3);
+    });
+
+  describe('size()', function() {
+    it('should take one argument', function() {
+      queue.add('a');
+      queue.add('b');
+      queue.add('c');
+      queue.add('d');
+      expect(queue.size()).to.equal(4);
+    });
+  });
+
+  describe('remove', function() {
+    it('should remove the first thing added', function() {
+      queue.add('a');
+      queue.add('b');
+      queue.add('c');
+      queue.add('d');
+      expect(queue.remove()).to.equal('a');
+    });
+
+    it('check to see if element is elemenated', function() {
+      queue.add('a');
+      queue.add('b');
+      queue.add('c');
+      queue.add('d');
+      queue.remove();
+      expect(queue[0]).to.equal(undefined);
+    });
+  });
+
   // Hey! Add more tests here to test the functionality of queue
 });

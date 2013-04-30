@@ -2,30 +2,31 @@ var makeStack = function(){
   // Use an object with numeric keys to store values
   var storage = {};
 
-  var size = 0; // Hint: set an initial value here
+  var last = 0; // Hint: set an initial value here
 
   // Implement the methods below
   var stack = {};
 
   stack.add = function(value){
-    stack[size] = value;
-    size ++;
-    return stack;
+    stack[last] = value;
+    last ++;
   };
 
   stack.remove = function(){
     var length = stack.size();
-    return stack[length-1];
+    var returnVariable = stack[length-1];
+    delete stack[length-1];
+    return returnVariable;
   };
 
-  stack.size = function(obj){
+  stack.size = function(){
     var sizeCheck = 0;
-    for(var key in obj){
-      if(obj.hasOwnProperty(key)){
-        sizeCheck++;
-      }
+    for(var key in stack){
+        if(!isNaN(key)){
+          sizeCheck = sizeCheck + 1;
+        }
     }
-    return size;
+    return sizeCheck;
   };
 
   return stack;

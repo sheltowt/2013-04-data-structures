@@ -43,6 +43,14 @@ describe("stack", function() {
       expect(stack.add.length).to.equal(1);
     });
 
+    it('should be able to add multiple things', function() {
+      // Make sure add() takes a single argument using (see http://mdn.io/Function.length)
+      stack.add('a');
+      stack.add('b');
+      stack.add('c');
+      expect(stack.size()).to.equal(3);
+    });
+
   it('that calling add increases the length of the stack', function() {
       stack.add('a');
       expect(stack.size()).to.equal(1);
