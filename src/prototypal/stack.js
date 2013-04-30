@@ -3,12 +3,12 @@ var Stack = function(){
   var storage = {};
 
   // Implement the methods below
-  var stack = Object.create(masterFunctionsStack);
+  var stack = new masterFunctionslast;
   stack.last = 0;
   return stack;
 };
 
-var masterFunctionsStack = {
+var masterFunctionslast = {
   add : function(value){
     this[this.last] = value;
     this.last ++;
