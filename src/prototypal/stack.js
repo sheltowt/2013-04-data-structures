@@ -3,7 +3,7 @@ var Stack = function(){
   var storage = {};
 
   // Implement the methods below
-  var stack = new masterFunctionslast;
+  var stack = Object.create(masterFunctionslast);
   stack.last = 0;
   return stack;
 };
